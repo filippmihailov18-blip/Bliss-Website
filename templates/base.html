@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bliss Lunch Bar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container nav-wrapper">
+            <a href="{{ url_for('home') }}" class="logo">BLISS</a>
+
+            <nav class="nav">
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('menu') }}">Menu</a>
+                <a href="{{ url_for('reserve_map') }}">Reserve</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="container">
+            {% for message in messages %}
+            <div class="alert">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer" id="contact">
+        <div class="container footer-grid">
+            <div>
+                <h3>BLISS Lunch Bar</h3>
+                <p>Fresh food, coffee, drinks and good atmosphere.</p>
+            </div>
+
+            <div>
+                <h4>Location</h4>
+                <p>Your town, Macedonia</p>
+            </div>
+
+            <div>
+                <h4>Contact</h4>
+                <p>Phone: 07X XXX XXX</p>
+                <p>Instagram: @bliss</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

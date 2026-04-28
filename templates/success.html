@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="page-hero">
+    <div class="container center">
+        <p class="eyebrow">Request Sent</p>
+        <h1>Your reservation is waiting for confirmation</h1>
+        <p>
+            Bliss will review your request and confirm it from their admin device.
+        </p>
+
+        <a href="{{ url_for('home') }}" class="btn primary">Back to Home</a>
+    </div>
+</section>
+
+{% endblock %}
